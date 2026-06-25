@@ -31,9 +31,14 @@ export default function Header() {
         {/* Gallery Logo */}
         <Link 
           href="/" 
-          className="font-serif text-xl md:text-2xl tracking-tight text-[#111111] font-normal hover:text-neutral-600 transition-colors duration-300"
+          className="hover:opacity-85 transition-opacity duration-300 block shrink-0"
         >
-          northernart11
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/brand_logo.png" 
+            alt="northernart11 logo" 
+            className="h-8 md:h-9 w-auto object-contain" 
+          />
         </Link>
 
         {/* Global Navigation links */}
@@ -43,12 +48,6 @@ export default function Header() {
             className="hover:text-[#111111] transition-colors duration-300"
           >
             Gallery
-          </Link>
-          <Link 
-            href="/admin" 
-            className="hover:text-[#111111] transition-colors duration-300"
-          >
-            Studio
           </Link>
           <Link 
             href="/cart" 

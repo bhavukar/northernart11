@@ -43,18 +43,71 @@ export default async function GalleryPage() {
       {/* Unified Nav Header */}
       <Header />
 
-      {/* Elegant Page Title */}
-      <div className="max-w-7xl mx-auto pt-16 pb-12 px-8">
-        <h1 className="font-serif text-3xl md:text-4xl tracking-tight text-[#111111] font-normal">
-          Fine Art Collection
-        </h1>
-        <p className="text-xs uppercase tracking-[0.3em] text-neutral-400 mt-2 font-sans">
-          Curated Contemporary Masterpieces
-        </p>
+      {/* Cinematic Hero Section with Indian Contemporary Art Touch */}
+      <div className="relative bg-white border-b border-neutral-100 py-12 md:py-24 px-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Poetic Typography */}
+          <div className="lg:col-span-6 flex flex-col space-y-6">
+            <div className="inline-flex items-center gap-2">
+              <span className="h-px w-8 bg-neutral-400"></span>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-neutral-400 font-sans font-semibold">
+                Indian Contemporary Fine Art
+              </span>
+            </div>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-[#111111] font-normal">
+              Heritage Soul. <br />
+              <span className="italic text-neutral-500 font-light">Modern Expression.</span>
+            </h1>
+            <p className="text-sm text-neutral-500 leading-relaxed max-w-lg font-sans">
+              A curated sanctuary showcasing high-end contemporary masterpieces. We bridge classical Indian tones of saffron, clay, and gold leaf with raw modern abstraction—curating exclusive visual acquisitions for niche collectors.
+            </p>
+            <div className="pt-4 flex items-center gap-6">
+              <a 
+                href="#collection" 
+                className="bg-[#111111] text-white hover:bg-neutral-800 px-6 py-3.5 text-xs uppercase tracking-widest transition-all duration-300 font-sans font-semibold"
+              >
+                Explore Collection
+              </a>
+            </div>
+          </div>
+
+          {/* Masterpiece Floating Exhibit */}
+          <div className="lg:col-span-6 flex justify-center relative">
+            {/* Museum Tag */}
+            <div className="absolute z-10 bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 shadow-sm border border-neutral-100 max-w-xs font-sans">
+              <p className="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold">Exhibit I</p>
+              <h4 className="font-serif text-sm text-[#111111] font-normal mt-0.5">Saffron Abstraction & Himalayan Mist</h4>
+              <p className="text-[10px] text-neutral-500 mt-1 font-mono">Oil, Clay & Gold Leafing on Canvas</p>
+            </div>
+            
+            {/* Visual Frame */}
+            <div className="relative max-w-md w-full bg-neutral-50 p-6 shadow-[0_30px_100px_rgba(0,0,0,0.06)] border border-neutral-100/50">
+              <div className="aspect-[4/5] w-full overflow-hidden relative grayscale-[10%] hover:grayscale-0 transition-all duration-[1000ms] ease-out">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/indian_art_hero.png" 
+                  alt="Featured Indian Contemporary Artwork" 
+                  className="w-full h-full object-cover scale-[1.01]" 
+                />
+              </div>
+            </div>
+            
+            {/* Subtle background abstract shape */}
+            <div className="absolute -top-12 -right-12 h-64 w-64 rounded-full bg-neutral-50 -z-10 mix-blend-multiply opacity-70 filter blur-2xl"></div>
+          </div>
+        </div>
       </div>
 
       {/* Main Staggered Asymmetrical Grid */}
-      <main className="max-w-7xl mx-auto px-8 pb-32">
+      <main id="collection" className="max-w-7xl mx-auto px-8 pb-32 pt-24 scroll-mt-20">
+        <div className="pb-8 border-b border-neutral-100 mb-16">
+          <h2 className="font-serif text-2xl md:text-3xl tracking-tight text-[#111111] font-normal">
+            The Exhibition
+          </h2>
+          <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 mt-1 font-sans">
+            Currently Available Original Works
+          </p>
+        </div>
         {(!paintings || paintings.length === 0) ? (
           <div className="py-32 text-center text-xs uppercase tracking-widest text-neutral-400">
             No work is currently on display.
@@ -119,7 +172,16 @@ export default async function GalleryPage() {
       {/* Simple Footer */}
       <footer className="border-t border-neutral-100 py-12 px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider text-neutral-400 uppercase">
-          <span>&copy; {new Date().getFullYear()} northernart11</span>
+          <div className="flex items-center gap-4">
+            <span>&copy; {new Date().getFullYear()} northernart11</span>
+            <span>•</span>
+            <Link 
+              href="/admin" 
+              className="hover:text-[#111111] transition-colors duration-300 lowercase tracking-normal"
+            >
+              studio login
+            </Link>
+          </div>
           <span>Curated with absolute minimalism</span>
         </div>
       </footer>
